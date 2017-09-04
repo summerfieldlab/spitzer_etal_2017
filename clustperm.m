@@ -11,7 +11,7 @@ function [clusters] = clustperm(dat, thrsh, clustthr, nits, nonparam)
         itclust=zeros(1,nits);
         for iter=1:nits
             itstats=zeros(1,size(dat,2));
-            flipper=randsample([-1 1],24,1)';
+            flipper=randsample([-1 1],size(dat,3),1)';
             for t=1:size(dat,2)
                 if nonparam
                     [p,h,stats] = signrank(squeeze(dat(i,t,:)).*flipper);
